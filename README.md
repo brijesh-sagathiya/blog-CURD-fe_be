@@ -1,6 +1,6 @@
 # Configuration Information
 
-## Environment Variables
+## Environment Variables -Backend
 
 - **PORT**: `7333`
 - **MONGO_URI**: `mongodb://localhost:27017/blog-app`
