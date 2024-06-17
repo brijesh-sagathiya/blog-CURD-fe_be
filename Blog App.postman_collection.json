@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "78146f06-ca0b-41c9-93dd-68c3c587cf46",
+		"name": "Blog App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28549680"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"developer\",\r\n    \"email\": \"developer@gmail.com\",\r\n    \"password\": \"developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7333/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7333",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"developer@gmail.com\",\r\n    \"password\": \"developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7333/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7333",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blog-App",
+			"item": [
+				{
+					"name": "list of blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:7333/api/blogs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7333",
+							"path": [
+								"api",
+								"blogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "a single blog data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:7333/api/blogs/:blogId",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7333",
+							"path": [
+								"api",
+								"blogs",
+								":blogId"
+							],
+							"variable": [
+								{
+									"key": "blogId",
+									"value": "667026e7130a8742f87d8f04"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a new Blog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef2ca1f-e1cc-45b0-ac06-b794c9e1944c"
+								},
+								{
+									"key": "description",
+									"value": "qwertyuiop asdfghjkl zxcvbnm",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "live",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7333/api/blogs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7333",
+							"path": [
+								"api",
+								"blogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updated a Blog",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "test1234567890",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MI/Downloads/download.png"
+								},
+								{
+									"key": "description",
+									"value": "qwertyuiop asdfghjkl zxcvbnm",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "live",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7333/api/blogs/:blogId",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7333",
+							"path": [
+								"api",
+								"blogs",
+								":blogId"
+							],
+							"variable": [
+								{
+									"key": "blogId",
+									"value": "667026e7130a8742f87d8f04"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a Blog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:7333/api/blogs/:blogId",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7333",
+							"path": [
+								"api",
+								"blogs",
+								":blogId"
+							],
+							"variable": [
+								{
+									"key": "blogId",
+									"value": "667026e7130a8742f87d8f04"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
